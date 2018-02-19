@@ -13,15 +13,10 @@ namespace SquaringSquares
         {
             InitializeComponent();
 
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
-            else
-                DependencyService.Register<CloudDataStore>();
-
             if (Device.RuntimePlatform == Device.iOS)
-                MainPage = new MainPage();
+                GameScreen = new GameScreen();
             else
-                MainPage = new NavigationPage(new MainPage());
+                GameScreen = new GameScreen();
         }
     }
 }
